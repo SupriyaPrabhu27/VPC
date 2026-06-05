@@ -1,10 +1,17 @@
 # Build Your VPC and Launch a Web Server (AWS) 
 
+
+## NAME:  SUPRIYA PRABHU
+## REGISTER NO : 212224240165
+
+
+
+
 ## Objective
 
 The objective of this experiment is to understand how to design and configure a basic network infrastructure in AWS using a Virtual Private Cloud (VPC). This lab focuses on creating a VPC with a public subnet, configuring an Internet Gateway and route table, launching an EC2 instance, and hosting a simple web server that can be accessed over the internet.
 
----
+
 
 ## Prerequisites
 
@@ -12,7 +19,7 @@ The objective of this experiment is to understand how to design and configure a 
 * AWS account or AWS Academy Lab access
 * Web browser with internet connectivity
 
----
+
 
 ## Tools Used
 
@@ -23,7 +30,7 @@ The objective of this experiment is to understand how to design and configure a 
 * Route Table
 * Security Groups
 
----
+
 
 ## Tasks Performed
 
@@ -75,29 +82,40 @@ Install and start a web server (Apache HTTPD) on the EC2 instance using user dat
 
 Create a simple HTML page and verify that it can be accessed from a web browser using the public IP address of the instance.---
 
+## Workflow (Student Explanation)
+
+1. Create a Virtual Private Cloud (VPC) with a CIDR block (e.g., 10.0.0.0/16) to establish a logically isolated network in AWS. This forms the foundation where all cloud resources will reside.
+2. Create a public subnet (e.g., 10.0.1.0/24) inside the VPC and enable auto-assign public IP. This allows instances in the subnet to be accessible from the internet.
+3. Create an Internet Gateway (IGW) and attach it to the VPC. Then configure a route table with a default route (0.0.0.0/0) pointing to the IGW and associate it with the public subnet to enable internet access.
+4. Create a Security Group to act as a firewall. Allow inbound traffic for:
+
+SSH (port 22) → for remote access
+
+HTTP (port 80) → for web server access
+
+5. Launch an EC2 instance (Amazon Linux 2, t2.micro) in the public subnet, attach the security group, and configure a web server (Apache). Deploy a simple HTML page and verify access using the instance’s public IP.
+
+
 
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: VPC and Subnet Details
 
-<img width="1598" height="696" alt="image" src="https://github.com/user-attachments/assets/36bee0cd-0bb7-4fc8-a8ba-5dd08f16a985" />
+<img width="1914" height="913" alt="Screenshot 2026-02-24 105947" src="https://github.com/user-attachments/assets/0af1e33d-45ea-4bb1-8534-03e284d05dac" />
 
 
----
 
 ### Screenshot 2: EC2 Instance Running
 
-<img width="1595" height="711" alt="image" src="https://github.com/user-attachments/assets/fb0e1a93-58bd-463e-904f-4829c1de5d26" />
+<img width="1902" height="911" alt="Screenshot 2026-02-24 111106" src="https://github.com/user-attachments/assets/ee98e4b0-21b1-4eaf-a0b5-523bf008bfd4" />
 
 
----
 
 ### Screenshot 3: Web Server Output in Browser
 
-<img width="1600" height="809" alt="image" src="https://github.com/user-attachments/assets/f0fa2eef-f9e2-46c0-a73a-043c4c44931a" />
+<img width="1805" height="804" alt="Screenshot 2026-02-24 111144" src="https://github.com/user-attachments/assets/03f66c23-578e-4daa-8c60-d662e02fdcfb" />
 
 
----
 
 ## Result 
 
